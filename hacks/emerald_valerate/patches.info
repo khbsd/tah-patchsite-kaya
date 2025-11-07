@@ -1,0 +1,11 @@
+{
+  "file": "./patches.zip",
+  "patches": [
+    {
+      "file": "pokeemerald_kaya.bps",
+      "name": "ROM Hack v1.0",
+      "description": "",
+      "outputName": "ROM Hack"
+    }
+  ]
+}
