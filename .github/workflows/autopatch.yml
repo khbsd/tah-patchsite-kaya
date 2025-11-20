@@ -11,8 +11,6 @@ jobs:
       - name: testing
         run: |
           echo howdy lmao
-          wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-          \. "$HOME/.nvm/nvm.sh"
           nvm install 24
           node -v
           npm -v
