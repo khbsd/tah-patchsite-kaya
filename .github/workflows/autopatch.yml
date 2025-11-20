@@ -13,5 +13,6 @@ jobs:
           echo howdy lmao
           \. "$HOME/.nvm/nvm.sh"
           nvm install 24
+          npm install box-node-sdk
           node -v
           npm -v
