@@ -11,6 +11,7 @@ jobs:
       - name: testing
         run: |
           echo howdy lmao
+          \. "$HOME/.nvm/nvm.sh"
           nvm install 24
           node -v
           npm -v
