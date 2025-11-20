@@ -1,0 +1,21 @@
+name: Auto Patch Rom
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: testing 1
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: testing
+        run: |
+          echo howdy lmao
