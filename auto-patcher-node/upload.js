@@ -21,21 +21,19 @@ try {
 	}).isFile;
 } catch (FileNotFoundError) { }
 
+if (isFile) {
+	await filen.fs().rmfile("/test/test.txt");
+}
+
 try {
 	isDir = filen.fs().stat({
 		path: "/test"
 	}).isDir;
-} catch (FileNotFoundError) { }
-
-if (isFile) {
-	await filen.fs().rmfile("/test/test.txt");
-} else if (isDir) {
-	await filen.fs().rmdir("/test");
+} catch (FileNotFoundError) {
+	await filen.fs().mkdir({
+		path: "/test"
+	})
 }
-
-await filen.fs().mkdir({
-	path: "/test"
-})
 
 await filen.fs().upload({
 	path: "/test",
