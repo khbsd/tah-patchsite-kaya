@@ -27,7 +27,7 @@ async function log_in() {
 	return login;
 }
 
-async function upload_overwrite() {
+function upload_overwrite() {
 	return log_in().then(() => console.log("logged out"));
 }
 upload_overwrite();
