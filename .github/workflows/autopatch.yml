@@ -9,6 +9,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: '24.x'
       - name: testing
@@ -18,7 +19,6 @@ jobs:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
           echo howdy lmao
-          npm install box-node-sdk
           node -v
           npm -v
           node ./auto-patcher-node/upload.js
