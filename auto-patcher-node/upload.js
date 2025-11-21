@@ -10,8 +10,9 @@ const filen = new FilenSDK({
 let isFile, isDir = false;
 
 async function upload_overwrite() {
+	let login;
 	try {
-		let login = await filen.login({
+		login = await filen.login({
 			email: process.env.USERNAME,
 			password: process.env.PASSWORD,
 		});
@@ -24,6 +25,6 @@ async function upload_overwrite() {
 	}
 
 	console.log("yippee.jpg");
-	filen.logout();
+	login.logout();
 }
 upload_overwrite();
