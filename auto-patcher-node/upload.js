@@ -7,6 +7,7 @@ const filen = new FilenSDK({
 	connectToSocket: true, // Recommended if you are using the virtual FS class. Keeps the internal item tree up to date with remote changes.
 	tmpPath: path.join(os.tmpdir(), "filen-sdk") // Temporary local path used to store metadata and chunks. Only available in Node.JS.
 })
+let isFile, isDir = false;
 
 await filen.login({
 	email: process.env.USERNAME,
@@ -14,12 +15,17 @@ await filen.login({
 	//twoFactorCode: "123456" // Can be omitted if you do not have 2FA enabled.
 })
 
-const isFile = filen.fs().stat({
-	path:"/test/test.txt"
-}).isFile;
-const isDir = filen.fs().stat({
-	path:"/test"
-}).isDir;
+try {
+	isFile = filen.fs().stat({
+		path: "/test/test.txt"
+	}).isFile;
+} catch (FileNotFoundError) { }
+
+try {
+	isDir = filen.fs().stat({
+		path: "/test"
+	}).isDir;
+} catch (DirectoryNotFoundError) { }
 
 if (isFile) {
 	await filen.fs().rmfile("/test/test.txt");
