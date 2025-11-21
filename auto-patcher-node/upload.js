@@ -33,9 +33,9 @@ async function upload_file() {
 
 upload_file().then(() => {
 	return new Promise((resolve) => {
-		console.log("done");
 		setTimeout(() => {
 			resolve(1);
 		}, 1000);
+		console.log("done");
 	})
 });

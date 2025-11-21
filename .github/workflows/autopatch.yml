@@ -26,3 +26,4 @@ jobs:
           node -v
           npm -v
           node auto-patcher-node/upload.js
+          .exit
