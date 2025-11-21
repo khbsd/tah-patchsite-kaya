@@ -15,6 +15,8 @@ await filen.login({
 	//twoFactorCode: "123456" // Can be omitted if you do not have 2FA enabled.
 })
 
+console.log("checking dir");
+
 try {
 	isDir = filen.fs().stat({
 		path: "/test"
@@ -27,11 +29,13 @@ try {
 	}
 } catch (FileNotFoundError) { }
 
+console.log("checking file");
+
 try {
 	isFile = filen.fs().stat({
 		path: "/test/test.txt"
 	}).isFile;
-	
+
 	if (isFile) {
 		await filen.fs().rmfile({
 			path: "/test/test.txt"
