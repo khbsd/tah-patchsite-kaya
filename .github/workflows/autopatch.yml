@@ -10,9 +10,9 @@ jobs:
     steps:
       - name: testing
         env:
-          USER_ID:       {{ secrets.USER_ID }}
-          CLIENT_ID:     {{ secrets.CLIENT_ID }}
-          CLIENT_SECRET: {{ secrets.CLIENT_SECRET }}
+          USER_ID:       ${{ secrets.USER_ID }}
+          CLIENT_ID:     ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
           echo howdy lmao
           \. "$HOME/.nvm/nvm.sh"
