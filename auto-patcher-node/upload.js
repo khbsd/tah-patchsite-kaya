@@ -25,6 +25,6 @@ async function upload_overwrite() {
 		console.log("error: ", err);
 	}
 
-	return await login.logout().then(() => console.log("logged out"));
+	return () => console.log("logged out");
 }
 upload_overwrite();
