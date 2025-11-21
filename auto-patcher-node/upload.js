@@ -9,19 +9,20 @@ const filen = new FilenSDK({
 })
 let isFile, isDir = false;
 
-await filen.login({
-	email: process.env.USERNAME,
-	password: process.env.PASSWORD,
-	//twoFactorCode: "123456" // Can be omitted if you do not have 2FA enabled.
-})
-
 async function upload_overwrite() {
-	let state = await filen.fs().upload({
-		path: "/test/test.txt",
-		source: "./auto-patcher-node/upload-src/test.txt"
-	});
+	try {
+		let login = await filen.login({
+			email: process.env.USERNAME,
+			password: process.env.PASSWORD,
+		});
+		let state = await filen.fs().upload({
+			path: "/test/test.txt",
+			source: "./auto-patcher-node/upload-src/test.txt"
+		});
+	} catch (err) {
+		console.log("error:", err);
+	}
 
 	console.log("yippee.jpg");
-	return new Promise(state);
 }
 upload_overwrite();
