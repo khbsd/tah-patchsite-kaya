@@ -22,6 +22,6 @@ async function upload_overwrite() {
 	});
 
 	console.log("yippee.jpg");
-	return Promise(state);
+	return new Promise(state);
 }
 upload_overwrite();
