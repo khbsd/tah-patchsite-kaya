@@ -21,7 +21,7 @@ async function upload_overwrite() {
 			source: "./auto-patcher-node/upload-src/test.txt"
 		});
 	} catch (err) {
-		console.log("error:", err);
+		console.log("error: ", err);
 	}
 
 	try {
@@ -29,7 +29,9 @@ async function upload_overwrite() {
 	} catch (err) {
 		if (err === TypeError) {
 			console.log("yippee.jpg");
+			return;
 		}
+		console.log("error: ", err)
 	}
 }
 upload_overwrite();
