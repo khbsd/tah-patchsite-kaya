@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@patchless
+      - uses: actions/checkout
         with:
           node-version: '24.x'
       - name: testing
