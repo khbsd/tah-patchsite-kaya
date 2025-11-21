@@ -30,4 +30,12 @@ async function upload_file() {
 	isDone = true;
 	filen.logout();
 }
-upload_file().then(() => console.log("done"));
+
+upload_file().then(() => {
+	return new Promise((resolve) => {
+		console.log("done");
+		setTimeout(() => {
+			resolve(1);
+		}, 1000);
+	})
+});
