@@ -6,7 +6,7 @@
 	"dependencies": {
 		"chalk": "4.1.2",
 		"commander": "^11.0.0",
-		"node-box-sdk": "^0.1.8"
+		"box-node-sdk": "^4.1.1"
 	},
 	"name": "rom-patcher",
 	"description": "A ROM patcher made in Javascript. Compatible with IPS, BPS, APS, UPS and more formats.",
