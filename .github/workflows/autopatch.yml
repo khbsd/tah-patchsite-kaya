@@ -6,25 +6,23 @@ on:
 # example for how to call the upload script
 # node auto-patcher-node/upload.js auto-patcher-node/upload-src/test.txt /test
 
+#todo: get this set up for standalone use
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     environment: github-actions
 
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '24.x'
+      #- uses: actions/checkout@v6
+      #- uses: actions/setup-node@v6
+      #  with:
+      #    node-version: '24.x'
       - name: testing
-        env:
-          USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
+        #env:
+        #  USERNAME: ${{ secrets.USERNAME }}
+        #  PASSWORD: ${{ secrets.PASSWORD }}
         run: |
           echo howdy lmao
-          echo installing node deps
-          npm install
-          node -v
-          npm -v
 
 
