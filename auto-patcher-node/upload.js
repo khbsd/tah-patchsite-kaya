@@ -21,6 +21,7 @@ async function upload_overwrite() {
 		source: "./auto-patcher-node/upload-src/test.txt"
 	});
 
-	console.log(state);
+	console.log("yippee.jpg");
+	return Promise(state);
 }
 upload_overwrite();
