@@ -54,6 +54,6 @@ if (isFile) {
 console.log("uploading file");
 
 await filen.fs().upload({
-	path: "/test",
+	path: "/test/test.txt",
 	source: "./auto-patcher-node/upload-src/test.txt"
 })
