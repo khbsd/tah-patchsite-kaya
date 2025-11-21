@@ -47,9 +47,13 @@ if (isFile) {
 	})
 }
 
+console.log("making dir");
+
 await filen.fs().mkdir({
 	path: "/test"
 })
+
+console.log("uploading file");
 
 await filen.fs().upload({
 	path: "/test",
