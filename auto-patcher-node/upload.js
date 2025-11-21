@@ -31,11 +31,16 @@ try {
 	}).isFile;
 } catch (FileNotFoundError) { }
 
+console.log("removing dir");
+
 if (isDir) {
 	await filen.fs().rmdir({
 		path: "/test"
 	})
 }
+
+console.log("removing file");
+
 if (isFile) {
 	await filen.fs().rmfile({
 		path: "/test/test.txt"
