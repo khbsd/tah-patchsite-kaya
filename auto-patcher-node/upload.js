@@ -16,26 +16,34 @@ await filen.login({
 })
 
 try {
-	isFile = filen.fs().stat({
-		path: "/test/test.txt"
-	}).isFile;
-} catch (FileNotFoundError) { }
-
-if (isFile) {
-	await filen.fs().rmfile("/test/test.txt");
-}
-
-try {
 	isDir = filen.fs().stat({
 		path: "/test"
 	}).isDir;
-} catch (FileNotFoundError) {
-	await filen.fs().mkdir({
-		path: "/test"
-	})
-}
+
+	if (isDir) {
+		await filen.fs().rmdir({
+			path: "/test"
+		})
+	}
+} catch (FileNotFoundError) { }
+
+try {
+	isFile = filen.fs().stat({
+		path: "/test/test.txt"
+	}).isFile;
+	
+	if (isFile) {
+		await filen.fs().rmfile({
+			path: "/test/test.txt"
+		})
+	}
+} catch (FileNotFoundError) { }
+
+await filen.fs().mkdir({
+	path: "/test"
+})
 
 await filen.fs().upload({
 	path: "/test",
-    source: "./upload-src/test.txt"
+	source: "./auto-patcher-node/upload-src/test.txt"
 })
