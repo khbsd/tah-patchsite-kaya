@@ -24,9 +24,9 @@ async function upload_file() {
 
 	} catch (err) {
 		console.log("error: ", err);
-	}*/
+	}
 
-	isDone = true;
+	isDone = true;*/
 	filen.logout();
 
 	return new Promise((resolve) => {
