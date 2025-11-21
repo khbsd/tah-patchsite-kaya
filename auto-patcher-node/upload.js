@@ -25,7 +25,7 @@ async function upload_overwrite() {
 	}
 
 	try {
-		await login.logout();
+		login.logout();
 	} catch (err) {
 		if (err === TypeError) {
 			console.log("yippee.jpg");
