@@ -26,7 +26,7 @@ async function upload_file() {
 	} catch (err) {
 		console.log("error: ", err);
 	}
-	return login.then(() => {
+	login.then(() => {
 		isDone = true;
 		console.log("logged out");
 	});
