@@ -24,5 +24,6 @@ async function upload_overwrite() {
 	}
 
 	console.log("yippee.jpg");
+	filen.logout();
 }
 upload_overwrite();
