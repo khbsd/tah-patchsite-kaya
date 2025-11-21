@@ -1,7 +1,7 @@
 import { FilenSDK } from "@filen/sdk"
 import { log } from "console";
 import os from "os"
-import path from "path"
+import path, { resolve } from "path"
 
 const filen = new FilenSDK({
 	metadataCache: true, // Cache decrypted metadata in memory. Recommended.
@@ -28,6 +28,5 @@ async function upload_file() {
 	}
 
 	isDone = true;
-	console.log("logged out");
 }
-upload_file();
+upload_file().then(() => console.log("done"));
