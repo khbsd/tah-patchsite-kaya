@@ -17,7 +17,7 @@ await filen.login({
 
 console.log("checking dir");
 
-try {
+/*try {
 	isDir = filen.fs().stat({
 		path: "/test"
 	}).isDir;
@@ -49,7 +49,7 @@ if (isFile) {
 	await filen.fs().rmfile({
 		path: "/test/test.txt"
 	})
-}
+}*/
 
 console.log("making dir");
 
