@@ -20,4 +20,4 @@ jobs:
           npm install box-node-sdk
           node -v
           npm -v
-          node auto-patcher-node/upload.js
+          node /home/runner/work/tah-patchsite-kaya/auto-patcher-node/upload.js
