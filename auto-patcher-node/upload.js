@@ -28,6 +28,6 @@ async function upload_file() {
 	}
 
 	isDone = true;
-	return filen;
+	filen.logout();
 }
-upload_file().logout(() => console.log("done"));
+upload_file().then(() => console.log("done"));
