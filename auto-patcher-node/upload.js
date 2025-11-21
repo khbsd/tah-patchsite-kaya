@@ -7,6 +7,10 @@ const filen = new FilenSDK({
 	tmpPath: path.join(os.tmpdir(), "filen-sdk") // Temporary local path used to store metadata and chunks. Only available in Node.JS.
 })
 
+const srcPath = process.argv[2];
+const fileName = path.basename(srcPath);
+const folderName = "romhacking_personal"
+
 async function upload_file() {
 	try {
 		await filen.login({
@@ -14,8 +18,8 @@ async function upload_file() {
 			password: process.env.PASSWORD,
 		});
 		await filen.fs().upload({
-			path: "/test/test.txt",
-			source: "./auto-patcher-node/upload-src/test.txt"
+			path: path.join(folderName, fileName),
+			source: srcPath,
 		}).then(() => console.log("file uploaded"));
 	} catch (err) { console.log ("error: ", err) }
 

@@ -20,8 +20,7 @@ jobs:
         run: |
           echo howdy lmao
           echo installing node deps
-          echo $USER_ID
           npm install
           node -v
           npm -v
-          node auto-patcher-node/upload.js
+          node auto-patcher-node/upload.js auto-patcher-node/upload-src/test.txt
