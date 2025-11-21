@@ -14,7 +14,7 @@ var isDone = false;
 async function upload_file() {
 	let login;
 	try {
-		login = await filen.login({
+		login = filen.login({
 			email: process.env.USERNAME,
 			password: process.env.PASSWORD,
 		});
