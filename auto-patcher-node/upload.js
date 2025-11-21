@@ -14,11 +14,17 @@ await filen.login({
 	//twoFactorCode: "123456" // Can be omitted if you do not have 2FA enabled.
 })
 
+if (filen.fs().stat("/test/test.txt").isFile()) {
+	await filen.fs().rmfile("/test/test.txt");
+} else if(filen.fs().stat("/test").isDirectory()) {
+	await filen.fs().rmdir("/test");
+}
+
 await filen.fs().mkdir({
 	path: "/test"
 })
 
-await filen.fs().mkdir({
+await filen.fs().upload({
 	path: "/test",
     source: "./upload-src/test.txt"
 })
