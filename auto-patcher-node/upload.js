@@ -12,9 +12,8 @@ const filen = new FilenSDK({
 var isDone = false;
 
 async function upload_file() {
-	let login;
 	try {
-		login = await filen.login({
+		await filen.login({
 			email: process.env.USERNAME,
 			password: process.env.PASSWORD,
 		});
@@ -29,13 +28,13 @@ async function upload_file() {
 
 	isDone = true;
 	filen.logout();
-}
 
-upload_file().then(() => {
 	return new Promise((resolve) => {
 		setTimeout(() => {
 			resolve(1);
 		}, 1000);
 		console.log("done");
-	})
-});
+	});
+}
+
+upload_file();
