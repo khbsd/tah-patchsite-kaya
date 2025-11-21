@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@patchless
+        with:
+          node-version: '24.x'
       - name: testing
         env:
           USER_ID:       ${{ secrets.USER_ID }}
@@ -15,9 +18,7 @@ jobs:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
           echo howdy lmao
-          \. "$HOME/.nvm/nvm.sh"
-          nvm install 24
           npm install box-node-sdk
           node -v
           npm -v
-          node /home/runner/work/tah-patchsite-kaya/auto-patcher-node/upload.js
+          node ./auto-patcher-node/upload.js
