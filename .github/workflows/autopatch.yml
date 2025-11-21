@@ -20,8 +20,8 @@ jobs:
         run: |
           echo howdy lmao
           echo installing node deps
+          cd tah-patchsite-kaya
           npm ci
           node -v
           npm -v
-          cd tah-patchsite-kaya
           node auto-patcher-node/upload.js
