@@ -1,7 +1,7 @@
 name: Auto Patch Rom
 
 on:
-  push:
+  [push, workflow_dispatch]
 
 jobs:
   sync:
