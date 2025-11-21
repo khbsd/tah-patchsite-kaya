@@ -1,4 +1,5 @@
 import { FilenSDK } from "@filen/sdk"
+import { log } from "console";
 import os from "os"
 import path from "path"
 
@@ -24,14 +25,6 @@ async function upload_overwrite() {
 		console.log("error: ", err);
 	}
 
-	try {
-		login.logout();
-	} catch (err) {
-		if (err === TypeError) {
-			console.log("yippee.jpg");
-			return;
-		}
-		console.log("error: ", err)
-	}
+	return await login.logout().then(() => console.log("logged out"));
 }
 upload_overwrite();
