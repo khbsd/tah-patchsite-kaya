@@ -14,7 +14,7 @@ var isDone = false;
 async function upload_file() {
 	let login;
 	try {
-		login = filen.login({
+		login = await filen.login({
 			email: process.env.USERNAME,
 			password: process.env.PASSWORD,
 		});
@@ -26,9 +26,8 @@ async function upload_file() {
 	} catch (err) {
 		console.log("error: ", err);
 	}
-	login.then(() => {
-		isDone = true;
-		console.log("logged out");
-	});
+	
+	isDone = true;
+	console.log("logged out");
 }
 upload_file();
