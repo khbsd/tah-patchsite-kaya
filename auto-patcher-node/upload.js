@@ -21,7 +21,9 @@ try {
 	isDir = filen.fs().stat({
 		path: "/test"
 	}).isDir;
-} catch (FileNotFoundError) { }
+} catch (FileNotFoundError) {
+	return;
+}
 
 console.log("checking file");
 
@@ -29,7 +31,9 @@ try {
 	isFile = filen.fs().stat({
 		path: "/test/test.txt"
 	}).isFile;
-} catch (FileNotFoundError) { }
+} catch (FileNotFoundError) {
+	return;
+}
 
 console.log("removing dir");
 
