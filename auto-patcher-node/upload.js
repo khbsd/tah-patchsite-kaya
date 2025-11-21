@@ -13,3 +13,12 @@ await filen.login({
 	password: process.env.PASSWORD,
 	//twoFactorCode: "123456" // Can be omitted if you do not have 2FA enabled.
 })
+
+await filen.fs().mkdir({
+	path: "/test"
+})
+
+await filen.fs().mkdir({
+	path: "/test",
+    source: "./upload-src/test.txt"
+})
