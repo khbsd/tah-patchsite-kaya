@@ -12,7 +12,7 @@ const filen = new FilenSDK({
 var isDone = false;
 
 async function upload_file() {
-	try {
+	/*try {
 		await filen.login({
 			email: process.env.USERNAME,
 			password: process.env.PASSWORD,
@@ -24,7 +24,7 @@ async function upload_file() {
 
 	} catch (err) {
 		console.log("error: ", err);
-	}
+	}*/
 
 	isDone = true;
 	filen.logout();
