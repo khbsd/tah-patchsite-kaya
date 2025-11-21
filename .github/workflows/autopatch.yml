@@ -15,8 +15,8 @@ jobs:
           node-version: '24.x'
       - name: testing
         env:
-          USER_ID: ${{ secrets.USER_ID }}
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
           echo howdy lmao
