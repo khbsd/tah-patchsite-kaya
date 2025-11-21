@@ -14,9 +14,16 @@ await filen.login({
 	//twoFactorCode: "123456" // Can be omitted if you do not have 2FA enabled.
 })
 
-if (filen.fs().stat("/test/test.txt").isFile) {
+const isFile = filen.fs().stat({
+	path:"/test/test.txt"
+}).isFile;
+const isDir = filen.fs().stat({
+	path:"/test"
+}).isDir;
+
+if (isFile) {
 	await filen.fs().rmfile("/test/test.txt");
-} else if(filen.fs().stat("/test").isDirectory) {
+} else if (isDir) {
 	await filen.fs().rmdir("/test");
 }
 
