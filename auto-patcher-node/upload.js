@@ -8,9 +8,10 @@ const filen = new FilenSDK({
 	connectToSocket: true, // Recommended if you are using the virtual FS class. Keeps the internal item tree up to date with remote changes.
 	tmpPath: path.join(os.tmpdir(), "filen-sdk") // Temporary local path used to store metadata and chunks. Only available in Node.JS.
 })
-let isFile, isDir = false;
 
-async function log_in() {
+var isDone = false;
+
+async function upload_file() {
 	let login;
 	try {
 		login = await filen.login({
@@ -20,14 +21,14 @@ async function log_in() {
 		let state = await filen.fs().upload({
 			path: "/test/test.txt",
 			source: "./auto-patcher-node/upload-src/test.txt"
-		});
+		}).then(() => console.log("file uploaded size: ", state.size));
+
 	} catch (err) {
 		console.log("error: ", err);
 	}
-	return login;
+	return login.then(() => {
+		isDone = true;
+		console.log("logged out");
+	});
 }
-
-function upload_overwrite() {
-	return log_in().then(() => console.log("logged out"));
-}
-upload_overwrite();
+upload_file();
