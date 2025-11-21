@@ -20,6 +20,7 @@ jobs:
         run: |
           echo howdy lmao
           echo installing node deps
+          echo $USER_ID
           npm install
           node -v
           npm -v
