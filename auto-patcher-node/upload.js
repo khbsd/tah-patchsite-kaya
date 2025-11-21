@@ -9,7 +9,7 @@ const filen = new FilenSDK({
 })
 let isFile, isDir = false;
 
-filen.login({
+await filen.login({
 	email: process.env.USERNAME,
 	password: process.env.PASSWORD,
 	//twoFactorCode: "123456" // Can be omitted if you do not have 2FA enabled.
