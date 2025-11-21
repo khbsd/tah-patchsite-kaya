@@ -15,45 +15,12 @@ await filen.login({
 	//twoFactorCode: "123456" // Can be omitted if you do not have 2FA enabled.
 })
 
-console.log("checking dir");
+async function upload_overwrite() {
+	let state = await filen.fs().upload({
+		path: "/test/test.txt",
+		source: "./auto-patcher-node/upload-src/test.txt"
+	});
 
-/*try {
-	isDir = filen.fs().stat({
-		path: "/test"
-	}).isDir;
-} catch (FileNotFoundError) {
-	return;
+	console.log(state);
 }
-
-console.log("checking file");
-
-try {
-	isFile = filen.fs().stat({
-		path: "/test/test.txt"
-	}).isFile;
-} catch (FileNotFoundError) {
-	return;
-}
-
-console.log("removing dir");
-
-if (isDir) {
-	await filen.fs().rmdir({
-		path: "/test"
-	})
-}
-
-console.log("removing file");
-
-if (isFile) {
-	await filen.fs().rmfile({
-		path: "/test/test.txt"
-	})
-}*/
-
-console.log("uploading file");
-
-filen.fs().upload({
-	path: "/test/test.txt",
-	source: "./auto-patcher-node/upload-src/test.txt"
-})
+upload_overwrite();
