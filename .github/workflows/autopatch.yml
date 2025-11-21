@@ -3,6 +3,9 @@ name: Auto Patch Rom
 on:
   [push, workflow_dispatch]
 
+# example for how to call the upload script
+# node auto-patcher-node/upload.js auto-patcher-node/upload-src/test.txt /test
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -23,5 +26,5 @@ jobs:
           npm install
           node -v
           npm -v
-          node auto-patcher-node/upload.js auto-patcher-node/upload-src/test.txt /test
+
 
