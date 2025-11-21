@@ -7,18 +7,20 @@ const filen = new FilenSDK({
 	tmpPath: path.join(os.tmpdir(), "filen-sdk") // Temporary local path used to store metadata and chunks. Only available in Node.JS.
 })
 
-const srcPath = process.argv[2];
-const fileName = path.basename(srcPath);
-const folderName = "romhacking_personal"
-
 async function upload_file() {
+	let srcPath = process.argv[2];
+	let fileName = path.basename(srcPath);
+	let destFolderName = process.argv[3];
+	
+	console.log(srcPath, fileName, destFolderName);
+
 	try {
 		await filen.login({
 			email: process.env.USERNAME,
 			password: process.env.PASSWORD,
 		});
 		await filen.fs().upload({
-			path: path.join(folderName, fileName),
+			path: path.join(destFolderName, fileName),
 			source: srcPath,
 		}).then(() => console.log("file uploaded"));
 	} catch (err) { console.log ("error: ", err) }

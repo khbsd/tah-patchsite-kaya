@@ -23,4 +23,5 @@ jobs:
           npm install
           node -v
           npm -v
-          node auto-patcher-node/upload.js auto-patcher-node/upload-src/test.txt
+          node auto-patcher-node/upload.js auto-patcher-node/upload-src/test.txt /test
+
