@@ -9,7 +9,7 @@ const filen = new FilenSDK({
 })
 let isFile, isDir = false;
 
-await filen.login({
+filen.login({
 	email: process.env.USERNAME,
 	password: process.env.PASSWORD,
 	//twoFactorCode: "123456" // Can be omitted if you do not have 2FA enabled.
@@ -53,7 +53,7 @@ if (isFile) {
 
 console.log("uploading file");
 
-await filen.fs().upload({
+filen.fs().upload({
 	path: "/test/test.txt",
 	source: "./auto-patcher-node/upload-src/test.txt"
 })
