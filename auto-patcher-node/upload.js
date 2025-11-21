@@ -21,12 +21,6 @@ try {
 	isDir = filen.fs().stat({
 		path: "/test"
 	}).isDir;
-
-	if (isDir) {
-		await filen.fs().rmdir({
-			path: "/test"
-		})
-	}
 } catch (FileNotFoundError) { }
 
 console.log("checking file");
@@ -35,13 +29,18 @@ try {
 	isFile = filen.fs().stat({
 		path: "/test/test.txt"
 	}).isFile;
-
-	if (isFile) {
-		await filen.fs().rmfile({
-			path: "/test/test.txt"
-		})
-	}
 } catch (FileNotFoundError) { }
+
+if (isDir) {
+	await filen.fs().rmdir({
+		path: "/test"
+	})
+}
+if (isFile) {
+	await filen.fs().rmfile({
+		path: "/test/test.txt"
+	})
+}
 
 await filen.fs().mkdir({
 	path: "/test"
