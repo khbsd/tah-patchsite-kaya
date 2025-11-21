@@ -1,5 +1,4 @@
-import { BoxClient } from 'box-node-sdk';
-import { BoxCcgAuth, CcgConfig } from 'box-node-sdk/box';
+import { BoxClient, BoxCcgAuth, CcgConfig } from 'box-node-sdk';
 
 const ccgConfig = new CcgConfig({
   userId: process.env.USER_ID,
