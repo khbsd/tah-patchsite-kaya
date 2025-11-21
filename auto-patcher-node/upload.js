@@ -25,7 +25,7 @@ try {
 	isDir = filen.fs().stat({
 		path: "/test"
 	}).isDir;
-} catch (DirectoryNotFoundError) { }
+} catch (FileNotFoundError) { }
 
 if (isFile) {
 	await filen.fs().rmfile("/test/test.txt");
