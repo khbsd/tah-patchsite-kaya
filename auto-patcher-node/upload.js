@@ -18,7 +18,6 @@ async function upload_file() {
 	let isFile = await fs.stat(srcPath).isFile();
 	if (!isFile) {
 		return new Promise((resolve) => {
-			filen.logout();
 			resolve();
 			console.log("source file not found, aborting");
 	});
