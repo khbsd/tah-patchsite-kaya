@@ -18,15 +18,15 @@ async function upload_file() {
 			email: process.env.USERNAME,
 			password: process.env.PASSWORD,
 		});
-		let state = await filen.fs().upload({
+		await filen.fs().upload({
 			path: "/test/test.txt",
 			source: "./auto-patcher-node/upload-src/test.txt"
-		}).then(() => console.log("file uploaded size: ", state.size));
+		}).then(() => console.log("file uploaded"));
 
 	} catch (err) {
 		console.log("error: ", err);
 	}
-	
+
 	isDone = true;
 	console.log("logged out");
 }
