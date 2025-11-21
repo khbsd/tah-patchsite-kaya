@@ -10,7 +10,7 @@ const filen = new FilenSDK({
 })
 let isFile, isDir = false;
 
-async function upload_overwrite() {
+async function log_in() {
 	let login;
 	try {
 		login = await filen.login({
@@ -24,7 +24,10 @@ async function upload_overwrite() {
 	} catch (err) {
 		console.log("error: ", err);
 	}
+	return login;
+}
 
-	return login.then(() => console.log("logged out"));
+async function upload_overwrite() {
+	return log_in().then(() => console.log("logged out"));
 }
 upload_overwrite();
