@@ -14,12 +14,12 @@ async function uploadFile(src, dest, fileName) {
 		await filen.login({
 			email: process.env.USERNAME,
 			password: process.env.PASSWORD,
-		}).then(() => console.log("uploading file:", src))
+		}).then(() => console.log("uploading file:", path.basename(src)))
 
 		await filen.fs().upload({
 			path: path.join(dest, fileName),
 			source: src,
-		}).then(() => console.log(src, " uploaded"));
+		}).then(() => console.log(path.basename(src), " uploaded"));
 	} catch (err) { console.log ("error: ", err) }
 
 	filen.logout();
